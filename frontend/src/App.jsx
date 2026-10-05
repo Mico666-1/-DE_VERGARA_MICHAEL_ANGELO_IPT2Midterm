@@ -2,7 +2,7 @@ import './App.css'
 function App()
 {
 	return(
-		<div>
+		<main>
 			<h1>Sari-Sari Store Inventory</h1>
 			<table>
 				<tr>
@@ -11,9 +11,10 @@ function App()
 					<th>Category</th>
 					<th>Price</th>
 					<th>Quantity</th>
+					<th>Action</th>
 				</tr>
 			</table>
-		</div>
+		</main>
 	)
 }
 export default App
