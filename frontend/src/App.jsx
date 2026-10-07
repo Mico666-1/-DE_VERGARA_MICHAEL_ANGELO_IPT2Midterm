@@ -1,20 +1,11 @@
+import {useState} from 'react'
+import Home from './Home'
+import AddNewProduct from './AddNewProduct'
 import './App.css'
 function App()
 {
-	return(
-		<main>
-			<h1>Sari-Sari Store Inventory</h1>
-			<table>
-				<tr>
-					<th>Product ID</th>
-					<th>Product Name</th>
-					<th>Category</th>
-					<th>Price</th>
-					<th>Quantity</th>
-					<th>Action</th>
-				</tr>
-			</table>
-		</main>
-	)
+	const [view, setView] = useState('home')
+	if(view == 'home'){return(<Home setView={setView} />)}
+	if(view == 'add-new-product'){return(<AddNewProduct setView={setView} />)}
 }
 export default App
