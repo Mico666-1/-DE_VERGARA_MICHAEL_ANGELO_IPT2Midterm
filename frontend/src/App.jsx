@@ -1,11 +1,33 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import Home from './Home'
 import AddNewProduct from './AddNewProduct'
-import './App.css'
-function App()
-{
-	const [view, setView] = useState('home')
-	if(view == 'home'){return(<Home setView={setView} />)}
-	if(view == 'add-new-product'){return(<AddNewProduct setView={setView} />)}
+import EditProduct from './EditProduct'
+
+export default function App() {
+  const [view, setView] = useState('home')
+  const [selectedProduct, setSelectedProduct] = useState(null)
+
+  return (
+    <div>
+      {view === 'home' && (
+        <Home
+          setView={setView}
+          setSelectedProduct={setSelectedProduct}
+        />
+      )}
+
+      {view === 'add-new-product' && (
+        <AddNewProduct
+          setView={setView}
+        />
+      )}
+
+      {view === 'edit-product' && (
+        <EditProduct
+          product={selectedProduct}
+          setView={setView}
+        />
+      )}
+    </div>
+  )
 }
-export default App
